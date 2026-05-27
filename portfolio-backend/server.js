@@ -15,7 +15,10 @@ const transporter = nodemailer.createTransport({
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://portfolio-backend-mauve-nine.vercel.app",
+  credentials: true
+}));
 app.use(express.json());
 
 app.use("/contact", require("./routes/contact"));
