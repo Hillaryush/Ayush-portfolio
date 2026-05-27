@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ayush • Portfolio</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <meta name="description" content="Portfolio of Ayush — Software Engineer & Full-Stack Developer." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="progress"></div>
+
+  <div class="bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="grid-overlay"></div>
+    <div class="noise"></div>
+  </div>
+
+  <header class="site-header">
+    <a href="#home" class="brand">
+      <span class="brand-dot"></span>
+      <span class="brand-text">Ayush</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+ 
+
+    <nav class="nav">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#contact" class="nav-link btn btn-sm">Contact</a>
+    </nav>
+  </header>
+  <section id="home" class="section hero">
+    <div class="hero-content">
+      <p class="eyebrow reveal-up">Hello, I’m</p>
+      <h1 class="headline reveal-up">
+        Ayush
+        <span class="grad-text">Patel</span>
+      </h1>
+      <h2 class="subtitle reveal-up">
+        <span id="typed" class="typed"></span>
+        <span class="cursor">▍</span>
+      </h2>
+
+      <p class="hero-desc reveal-up">
+        I craft robust, scalable web apps with a product mindset—clean UI, solid architecture, and measurable impact.
+      </p>
+
+      <div class="hero-cta reveal-up">
+        <a href="#projects" class="btn">View Work</a>
+        <a href="#contact" class="btn ghost">Hire Me</a>
+      </div>
+
+      <div class="hero-socials reveal-up">
+        <a href="https://github.com/Hillaryush" target="_blank" rel="noopener" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/ayush-patel-06p" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:ayushpatel5779@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+
+      <ul class="hero-stats reveal-up">
+        <li><span class="stat">10+</span> Projects</li>
+        <li><span class="stat">1</span> IBM Internship</li>
+        <li><span class="stat">100%</span> Passion</li>
+      </ul>
+    </div>
+
+    <div class="hero-card reveal-up">
+      <div class="card glass">
+        <div class="card-top">
+          <div class="dots"><span></span><span></span><span></span></div>
+          <span class="mini-badge">Available for internships</span>
+        </div>
+        <div class="card-body">
+          <p>Focused on modern web stacks, performance, Game Development, and delightful interactions.</p>
+          <div class="tech-chips">
+            <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Python</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="section-head">
+        <h3 class="section-title reveal-up">About</h3>
+        <p class="section-subtitle reveal-up">B.Tech CSE student, learning by building.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card glass reveal-up">
+          <h4>Who am I?</h4>
+          <p>
+            I’m Ayush, a <strong>Software Engineer</strong> and <strong>Full-Stack Developer</strong> who enjoys turning complex problems into elegant, user-first products.
+          </p>
+          <p>
+            Currently pursuing <strong>B.Tech in Computer Science & Engineering</strong> at Jain University (2024–2028).
+          </p>
+          <p>
+            Recently, I completed a short-term IBM internship (June–July) where I built a <em>Salary Prediction Tool</em> using Python (NumPy, Pandas).
+          </p>
+        </div>
+
+        <div class="about-card glass reveal-up">
+          <h4>What I value</h4>
+          <ul class="list">
+            <li>Readable code & accessible design</li>
+            <li>Performance & observability</li>
+            <li>Iterative shipping with feedback loops</li>
+          </ul>
+        </div>
+
+        <div class="about-card glass reveal-up">
+          <h4>Currently exploring</h4>
+          <ul class="list">
+            <li>TypeScript + React patterns</li>
+            <li>API design, auth, and caching</li>
+            <li>Data engineering basics</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="skills" class="section skills">
+    <div class="container">
+      <div class="section-head">
+        <h3 class="section-title reveal-up">Skills</h3>
+        <p class="section-subtitle reveal-up">Tools I use to build and ship.</p>
+      </div>
+
+      <div class="chip-cloud">
+        <span class="chip reveal-pop">HTML</span>
+        <span class="chip reveal-pop">CSS</span>
+        <span class="chip reveal-pop">JavaScript</span>
+        <span class="chip reveal-pop">TypeScript</span>
+        <span class="chip reveal-pop">React</span>
+        <span class="chip reveal-pop">Node.js</span>
+        <span class="chip reveal-pop">Express</span>
+        <span class="chip reveal-pop">MongoDB</span>
+        <span class="chip reveal-pop">Python</span>
+        <span class="chip reveal-pop">NumPy</span>
+        <span class="chip reveal-pop">Pandas</span>
+        <span class="chip reveal-pop">Git</span>
+        <span class="chip reveal-pop">REST APIs</span>
+        <span class="chip reveal-pop">JWT/Auth</span>
+        <span class="chip reveal-pop">CI/CD</span>
+        <span class="chip reveal-pop">C</span>
+        <span class="chip reveal-pop">C++</span>
+      </div>
+    </div>
+  </section>
+  <section id="projects" class="section projects">
+    <div class="container">
+      <div class="section-head">
+        <h3 class="section-title reveal-up">Projects</h3>
+        <p class="section-subtitle reveal-up">Selected work that reflects my approach.</p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card glass reveal-up">
+          <div class="project-top">
+            <span class="badge">Python • Data Science</span>
+          </div>
+          <h4>Salary Prediction Tool</h4>
+          <p>
+            Built during IBM internship. Predicts salary ranges from input features using regression. Clean EDA, feature engineering, and evaluation.
+          </p>
+          <ul class="project-tags">
+            <li>Python</li><li>NumPy</li><li>Pandas</li>
+          </ul>
+          <div class="project-actions">
+            <a href="#" class="btn tiny">Case Study</a>
+            <a href="#" class="btn ghost tiny">Code</a>
+          </div>
+        </article>
+        <article class="project-card glass reveal-up">
+          <div class="project-top">
+            <span class="badge">Game • Web</span>
+          </div>
+          <h4>Memory Maze – Shifting Paths</h4>
+          <p>
+            A browser puzzle where paths reconfigure as you move. Emphasis on state, transitions, and level design.
+          </p>
+          <ul class="project-tags">
+            <li>JavaScript</li><li>Canvas</li>
+          </ul>
+          <div class="project-actions">
+            <a href="#" class="btn tiny">Live Demo</a>
+            <a href="#" class="btn ghost tiny">Code</a>
+          </div>
+        </article>
+        <article class="project-card glass reveal-up">
+          <div class="project-top">
+            <span class="badge">ML • Web</span>
+          </div>
+          <h4>Chatbot Song Recommendation</h4>
+          <p>
+            Simple conversational recommender powered by rules + similarity; ships as a neat web widget.
+          </p>
+          <ul class="project-tags">
+            <li>JS</li><li>ML basics</li>
+          </ul>
+          <div class="project-actions">
+            <a href="#" class="btn tiny">Live Demo</a>
+            <a href="#" class="btn ghost tiny">Code</a>
+          </div>
+        </article>
+        <article class="project-card glass reveal-up">
+          <div class="project-top">
+            <span class="badge">Productivity</span>
+          </div>
+          <h4>To-Do List Application</h4>
+          <p>
+            Minimalist to-do with keyboard shortcuts and local storage. Fast, offline-first feel.
+          </p>
+          <ul class="project-tags">
+            <li>HTML</li><li>CSS</li><li>JS</li>
+          </ul>
+          <div class="project-actions">
+            <a href="#" class="btn tiny">Live Demo</a>
+            <a href="#" class="btn ghost tiny">Code</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section id="experience" class="section exp">
+    <div class="container">
+      <div class="section-head">
+        <h3 class="section-title reveal-up">Experience</h3>
+        <p class="section-subtitle reveal-up">Internships & milestones.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="line"></div>
+
+        <article class="tl-item reveal-up">
+          <div class="dot"></div>
+          <div class="tl-card glass">
+            <h4>IBM — Intern</h4>
+            <p class="tl-meta">June – July • 1 month</p>
+            <p>
+              Built a <em>Salary Prediction Tool</em> with Python (NumPy, Pandas). Conducted EDA, feature selection, and model evaluation.
+            </p>
+          </div>
+        </article>
+
+        <article class="tl-item reveal-up">
+          <div class="dot"></div>
+          <div class="tl-card glass">
+            <h4>Career 360 — Campus Ambassador</h4>
+            <p class="tl-meta">Ongoing</p>
+            <p>
+              Representing Career 360 at my university by promoting initiatives, engaging peers, and building strong student networks.
+            </p>
+          </div>
+        </article>
+
+        <article class="tl-item reveal-up">
+          <div class="dot"></div>
+          <div class="tl-card glass">
+            <h4>Internshala — ISP (Internshala Student Partner)</h4>
+            <p class="tl-meta">Ongoing</p>
+            <p>
+              Spreading awareness about Internshala, helping peers access internships, and fostering campus engagement through events and activities.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="section-head">
+        <h3 class="section-title reveal-up">Let’s work together</h3>
+        <p class="section-subtitle reveal-up">
+          Have a project or internship in mind? Send a message.
+        </p>
+      </div>
+
+      <form id="contactForm" class="contact-form glass">
+        <div class="form-row">
+          <input type="text" id="name" name="name" placeholder="Name" required />
+          <input type="email" id="email" name="email" placeholder="Email" required />
+        </div>
+
+        <textarea id="message" name="message" placeholder="Message" required></textarea>
+
+        <button type="submit" class="btn" id="submitBtn">Send Message</button>
+        <p id="formStatus"></p>
+      </form>
+    </div>
+  </section>
+
+  <div class="footer-links">
+    <a href="#home">Top</a>
+    <a href="mailto:ayushpatel5779@gmail.com" target="_blank" rel="noopener">Email</a>
+    <a href="https://github.com/Hillaryush" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/ayush-patel-06p" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 Ayush Patel</p>
+  </footer>
+
+<script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+/* ================= GLOBAL ================= */
+
+body{
+  margin:0;
+  padding:0;
+  font-family:Inter,sans-serif;
+  background:#050816;
+  color:white;
+  overflow-x:hidden;
+}
+
+
+/* ================= WRAPPER ================= */
+
+.admin-wrapper{
+  position:relative;
+  z-index:10;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+
+/* ================= LOGIN CARD ================= */
+
+.glass-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  box-shadow:0 0 40px rgba(0,0,0,0.35);
+}
+
+.login-box{
+  width:100%;
+  max-width:420px;
+  padding:40px;
+  border-radius:24px;
+}
+
+
+/* ================= LOGO ================= */
+
+.admin-logo{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:25px;
+}
+
+.admin-logo span{
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:#8c64ff;
+  box-shadow:0 0 18px #8c64ff;
+}
+
+.admin-logo h1{
+  font-size:26px;
+  margin:0;
+}
+
+
+/* ================= TITLE ================= */
+
+.login-box h2{
+  font-size:38px;
+  margin-bottom:10px;
+  text-align:center;
+}
+
+.login-subtitle{
+  color:rgba(255,255,255,0.65);
+  margin-bottom:28px;
+  text-align:center;
+}
+
+
+/* ================= INPUTS ================= */
+
+.input-box{
+  position:relative;
+  margin-bottom:18px;
+}
+
+.input-box i{
+  position:absolute;
+  left:18px;
+  top:50%;
+  transform:translateY(-50%);
+  color:rgba(255,255,255,0.6);
+}
+
+.input-box input{
+  width:100%;
+  height:55px;
+  border:none;
+  outline:none;
+  border-radius:14px;
+  padding:0 18px 0 50px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  color:white;
+  font-size:16px;
+  box-sizing:border-box;
+}
+
+.input-box input:focus{
+  border-color:#8c64ff;
+  box-shadow:0 0 18px rgba(140,100,255,0.3);
+}
+
+
+/* ================= BUTTON ================= */
+
+.login-box button{
+  width:100%;
+  height:55px;
+  border:none;
+  border-radius:14px;
+  background:linear-gradient(90deg,#7f5cff,#9b7dff);
+  color:white;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s ease;
+  margin-top:10px;
+}
+
+.login-box button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 25px rgba(140,100,255,0.45);
+}
+
+
+/* ================= STATUS ================= */
+
+#loginMessage{
+  margin-top:16px;
+  text-align:center;
+  color:#ffb3b3;
+}
+
+
+/* ================= DASHBOARD ================= */
+
+.admin-dashboard{
+  position:relative;
+  z-index:10;
+  padding-top:100px;
+}
+
+
+/* ================= HEADER ================= */
+
+.dashboard-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.dashboard-title{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.dashboard-title span{
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:#8c64ff;
+  box-shadow:0 0 18px #8c64ff;
+}
+
+.dashboard-title h1{
+  margin:0;
+  font-size:40px;
+}
+
+.dashboard-subtitle{
+  color:rgba(255,255,255,0.7);
+  margin-bottom:30px;
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-box{
+  position:relative;
+  margin-bottom:30px;
+}
+
+.search-box i{
+  position:absolute;
+  left:18px;
+  top:50%;
+  transform:translateY(-50%);
+  color:rgba(255,255,255,0.6);
+}
+
+.search-box input{
+  width:100%;
+  height:55px;
+  border:none;
+  outline:none;
+  border-radius:14px;
+  padding:0 18px 0 50px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  color:white;
+  font-size:16px;
+  box-sizing:border-box;
+}
+
+
+/* ================= LOGOUT ================= */
+
+.logout-btn{
+  border:none;
+  padding:14px 22px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.06);
+  color:white;
+  cursor:pointer;
+  transition:0.3s ease;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.logout-btn:hover{
+  background:#8c64ff;
+  box-shadow:0 0 20px rgba(140,100,255,0.4);
+}
+
+
+/* ================= MESSAGE GRID ================= */
+
+.messages-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:20px;
+}
+
+
+/* ================= MESSAGE CARD ================= */
+
+.message-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:18px;
+  padding:22px;
+  backdrop-filter:blur(14px);
+  transition:0.3s ease;
+}
+
+.message-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 30px rgba(140,100,255,0.18);
+}
+
+
+/* ================= CARD HEADER ================= */
+
+.card-header{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:14px;
+}
+
+.card-header h3{
+  margin:0;
+}
+
+.card-header span{
+  font-size:13px;
+  color:rgba(255,255,255,0.55);
+}
+
+
+/* ================= EMAIL ================= */
+
+.email{
+  color:#9bbcff;
+  margin-bottom:14px;
+  word-break:break-word;
+}
+
+
+/* ================= MESSAGE ================= */
+
+.message{
+  line-height:1.6;
+  color:rgba(255,255,255,0.88);
+}
+
+
+/* ================= DELETE BUTTON ================= */
+
+.delete-btn{
+  margin-top:18px;
+  border:none;
+  padding:10px 16px;
+  border-radius:12px;
+  background:#ff4d6d;
+  color:white;
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+.delete-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 20px rgba(255,77,109,0.4);
+}
+
+
+/* ================= EMPTY STATE ================= */
+
+.empty-state{
+  padding:40px;
+  text-align:center;
+  color:rgba(255,255,255,0.6);
+}

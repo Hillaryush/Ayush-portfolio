@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Admin Dashboard</title>
+
+  <!-- Authentication Check -->
+  <script>
+    if (!localStorage.getItem("adminLoggedIn")) {
+      window.location.href = "admin-login.html";
+    }
+  </script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Portfolio Styles -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- Admin Styles -->
+  <link rel="stylesheet" href="./admin.css" />
+</head>
+
+<body>
+
+  <!-- Background -->
+  <div class="bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="grid-overlay"></div>
+    <div class="noise"></div>
+  </div>
+
+  <!-- Dashboard -->
+  <section class="admin-dashboard section container">
+
+    <!-- Header -->
+    <div class="dashboard-header">
+
+      <div class="dashboard-title">
+        <span></span>
+        <h1>Admin Dashboard</h1>
+      </div>
+
+      <button class="logout-btn" onclick="logout()">
+        <i class="fas fa-right-from-bracket"></i>
+        Logout
+      </button>
+
+    </div>
+
+    <!-- Subtitle -->
+    <p class="dashboard-subtitle">
+      Manage and review portfolio contact messages.
+    </p>
+
+    <!-- Search -->
+    <div class="search-box">
+
+      <i class="fas fa-search"></i>
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search messages..."
+      />
+
+    </div>
+
+    <!-- Messages -->
+    <div id="messagesContainer" class="messages-grid"></div>
+
+  </section>
+
+  <!-- JS -->
+  <script src="admin.js"></script>
+
+</body>
+
+</html>
