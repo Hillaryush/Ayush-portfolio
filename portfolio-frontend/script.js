@@ -41,7 +41,7 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
   const status = document.getElementById("formStatus");
 
   try {
-    const res = await fetch("http://localhost:5000/api/contact", {
+    const res = await fetch("https://portfolio-backend-1-khak.onrender.com/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
