@@ -15,9 +15,22 @@ const transporter = nodemailer.createTransport({
 
 const app = express();
 
+const allowedOrigins = [
+  "https://hillaryush-portfolio.vercel.app",
+  "https://portfolio-backend-mauve-nine.vercel.app",
+  "http://localhost:5500",
+  "http://localhost:3000",
+];
+
 app.use(cors({
-  origin: "https://portfolio-backend-mauve-nine.vercel.app",
-  credentials: true
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      return callback(null, true);
+    }
+    return callback(new Error('Not allowed by CORS'));
+  },
+  credentials: true,
 }));
 app.use(express.json());
 
