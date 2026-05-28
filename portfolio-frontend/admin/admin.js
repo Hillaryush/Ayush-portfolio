@@ -1,8 +1,5 @@
 // ================= CONFIG =================
-
 const API_URL = "https://portfolio-backend-1-khak.onrender.com/api/admin";
-
-// ================= LOGIN =================
 
 console.log("ADMIN JS LOADED 🚀");
 
@@ -10,9 +7,7 @@ const loginBtn = document.getElementById("loginBtn");
 
 if (loginBtn) {
 
-  loginBtn.addEventListener("click", async (e) => {
-
-    e.preventDefault();
+  loginBtn.addEventListener("click", async () => {
 
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
@@ -22,26 +17,26 @@ if (loginBtn) {
       return;
     }
 
-    loginBtn.innerText = "Logging in...";
-
     try {
 
-      const res = await fetch(`${API_URL}/login`, {
+      const response = await fetch(`${API_URL}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({
+          email,
+          password
+        })
       });
 
-      const data = await res.json();
+      const data = await response.json();
 
-      console.log("LOGIN RESPONSE:", data);
+      console.log(data);
 
-      if (res.ok && data.token) {
+      if (data.success) {
 
         localStorage.setItem("token", data.token);
-        localStorage.setItem("adminLoggedIn", "true");
 
         alert("Login Successful ✅");
 
@@ -49,25 +44,21 @@ if (loginBtn) {
 
       } else {
 
-        alert(data.message || "Invalid credentials ❌");
+        alert("Invalid credentials ❌");
 
       }
 
-    } catch (err) {
+    } catch (error) {
 
-      console.error("Login error ❌", err);
+      console.error(error);
+
       alert("Server error ❌");
-
-    } finally {
-
-      loginBtn.innerText = "Login";
 
     }
 
   });
 
 }
-
 // ================= DASHBOARD =================
 
 const container = document.getElementById("messagesContainer");
