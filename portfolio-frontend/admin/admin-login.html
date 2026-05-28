@@ -4,23 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Admin Login</title>
-
-  <!-- Main Portfolio Styles -->
   <link rel="stylesheet" href="../style.css" />
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-  <!-- Admin Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="./admin.css" />
 </head>
 
 <body>
 
-  <!-- Background Effects -->
   <div class="bg">
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
@@ -28,56 +19,39 @@
     <div class="noise"></div>
   </div>
 
-  <!-- Login Container -->
   <div class="admin-wrapper">
-
     <div class="login-box glass-card">
 
-      <!-- Logo -->
       <div class="admin-logo">
         <span></span>
         <h1>Ayush</h1>
       </div>
 
-      <!-- Heading -->
       <h2>Admin Login</h2>
 
-      <p class="login-subtitle">
-        Secure access to portfolio dashboard
-      </p>
+      <p class="login-subtitle">Secure access to portfolio dashboard</p>
 
-      <!-- Form -->
-      <form id="adminLoginForm">
+      <div class="input-box">
+        <i class="fas fa-envelope"></i>
+        <input type="email" id="email" placeholder="Admin Email" />
+      </div>
 
-        <!-- Email -->
-        <div class="input-box">
-  <i class="fas fa-envelope"></i>
-  <input type="email" id="email" placeholder="Admin Email" required />
-</div>
+      <div class="input-box">
+        <i class="fas fa-lock"></i>
+        <input type="password" id="password" placeholder="Password" />
+      </div>
 
-        <!-- Password -->
-        <div class="input-box">
-  <i class="fas fa-lock"></i>
-  <input type="password" id="password" placeholder="Password" required />
-</div>
-        <!-- Login Button -->
-        <button id="loginBtn" type="button">
-  <i class="fas fa-right-to-bracket"></i>
-  Login
-</button>
+      <button id="loginBtn" type="button">
+        <i class="fas fa-right-to-bracket"></i>
+        Login
+      </button>
 
-      </form>
-
-      <!-- Message -->
       <p id="loginMessage"></p>
 
     </div>
-
   </div>
 
-  <!-- JS -->
   <script src="admin.js"></script>
 
 </body>
-
-</html>\
+</html>
