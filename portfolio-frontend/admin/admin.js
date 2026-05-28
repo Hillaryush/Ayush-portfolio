@@ -1,3 +1,7 @@
+// ================= CONFIG =================
+
+const API_URL = "https://portfolio-backend-1-khak.onrender.com";
+
 // ================= LOGIN =================
 
 console.log("ADMIN JS LOADED 🚀");
@@ -11,7 +15,6 @@ if (loginBtn) {
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
 
-    // Empty validation
     if (!email || !password) {
       alert("Please fill all fields");
       return;
@@ -21,7 +24,7 @@ if (loginBtn) {
 
     try {
 
-      const res = await fetch("http://localhost:5000/api/login", {
+      const res = await fetch(`${API_URL}/api/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -33,11 +36,9 @@ if (loginBtn) {
 
       console.log("LOGIN RESPONSE:", data);
 
-      // Success Login
       if (data.token) {
 
         localStorage.setItem("token", data.token);
-
         localStorage.setItem("adminLoggedIn", "true");
 
         alert("Login Successful ✅");
@@ -53,7 +54,6 @@ if (loginBtn) {
     } catch (err) {
 
       console.error("Login error ❌", err);
-
       alert("Server error. Please try again.");
 
     }
@@ -62,19 +62,15 @@ if (loginBtn) {
 
 }
 
-
-
 // ================= DASHBOARD =================
 
 const container = document.getElementById("messagesContainer");
 
 let allMessages = [];
 
-// Load Messages
 if (container) {
   loadMessages();
 }
-
 
 // ================= LOAD MESSAGES =================
 
@@ -84,12 +80,10 @@ async function loadMessages() {
 
     const token = localStorage.getItem("token");
 
-    const res = await fetch("http://localhost:5000/api/messages", {
-
+    const res = await fetch(`${API_URL}/api/messages`, {
       headers: {
         Authorization: token
       }
-
     });
 
     const data = await res.json();
@@ -108,8 +102,6 @@ async function loadMessages() {
 
 }
 
-
-
 // ================= RENDER MESSAGES =================
 
 function renderMessages(messages) {
@@ -120,7 +112,6 @@ function renderMessages(messages) {
 
   container.innerHTML = "";
 
-  // No messages
   if (messages.length === 0) {
 
     container.innerHTML = `
@@ -132,7 +123,6 @@ function renderMessages(messages) {
     return;
   }
 
-  // Render Cards
   messages.forEach(msg => {
 
     const div = document.createElement("div");
@@ -140,32 +130,13 @@ function renderMessages(messages) {
     div.classList.add("message-card");
 
     div.innerHTML = `
-
       <div class="card-header">
-
         <h3>${msg.name}</h3>
-
-        <span>
-          ${new Date(msg.time).toLocaleString()}
-        </span>
-
+        <span>${new Date(msg.time).toLocaleString()}</span>
       </div>
-
-      <p class="email">
-        ${msg.email}
-      </p>
-
-      <p class="message">
-        ${msg.message}
-      </p>
-
-      <button
-        class="delete-btn"
-        onclick="deleteMessage('${msg._id}')"
-      >
-        Delete
-      </button>
-
+      <p class="email">${msg.email}</p>
+      <p class="message">${msg.message}</p>
+      <button class="delete-btn" onclick="deleteMessage('${msg._id}')">Delete</button>
     `;
 
     container.appendChild(div);
@@ -173,8 +144,6 @@ function renderMessages(messages) {
   });
 
 }
-
-
 
 // ================= SEARCH =================
 
@@ -187,13 +156,9 @@ if (searchInput) {
     const value = e.target.value.toLowerCase();
 
     const filtered = allMessages.filter(msg =>
-
       msg.name.toLowerCase().includes(value) ||
-
       msg.email.toLowerCase().includes(value) ||
-
       msg.message.toLowerCase().includes(value)
-
     );
 
     renderMessages(filtered);
@@ -202,15 +167,11 @@ if (searchInput) {
 
 }
 
-
-
 // ================= DELETE MESSAGE =================
 
 async function deleteMessage(id) {
 
-  const confirmDelete = confirm(
-    "Are you sure you want to delete this message?"
-  );
+  const confirmDelete = confirm("Are you sure you want to delete this message?");
 
   if (!confirmDelete) return;
 
@@ -218,14 +179,11 @@ async function deleteMessage(id) {
 
     const token = localStorage.getItem("token");
 
-    await fetch(`http://localhost:5000/api/messages/${id}`, {
-
+    await fetch(`${API_URL}/api/messages/${id}`, {
       method: "DELETE",
-
       headers: {
         Authorization: token
       }
-
     });
 
     loadMessages();
@@ -238,14 +196,11 @@ async function deleteMessage(id) {
 
 }
 
-
-
 // ================= LOGOUT =================
 
 function logout() {
 
   localStorage.removeItem("token");
-
   localStorage.removeItem("adminLoggedIn");
 
   window.location.href = "admin-login.html";
