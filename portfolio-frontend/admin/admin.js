@@ -1,6 +1,6 @@
 // ================= CONFIG =================
 
-const API_URL = "https://portfolio-backend-1-khak.onrender.com";
+const API_URL = "https://portfolio-backend-1-khak.onrender.com/api/admin";
 
 // ================= LOGIN =================
 
@@ -26,7 +26,7 @@ if (loginBtn) {
 
     try {
 
-      const res = await fetch(`${API_URL}/api/admin/login`, {
+      const res = await fetch(`${API_URL}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -86,7 +86,7 @@ async function loadMessages() {
 
     const token = localStorage.getItem("token");
 
-    const res = await fetch(`${API_URL}/api/messages`, {
+    const res = await fetch(`https://portfolio-backend-1-khak.onrender.com/api/messages`, {
       headers: {
         Authorization: token
       }
@@ -192,7 +192,7 @@ async function deleteMessage(id) {
 
     const token = localStorage.getItem("token");
 
-    await fetch(`${API_URL}/api/messages/${id}`, {
+    await fetch(`https://portfolio-backend-1-khak.onrender.com/api/messages/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: token
